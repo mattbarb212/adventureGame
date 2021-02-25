@@ -7,12 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
+using System.Media;
 
 namespace adventureGame
 {
     public partial class adventureGame : Form
     {
         int scene = 0;
+
+        SoundPlayer winPlayer = new SoundPlayer(Properties.Resources._518855__mrickey13__fight_win_tune);
+        SoundPlayer deathPlayer = new SoundPlayer(Properties.Resources._320247__nicktermer__scream);
+        SoundPlayer scenePlayer = new SoundPlayer(Properties.Resources._332854__robinhood76__06246_ghostly_hit);
         public adventureGame()
         {
             InitializeComponent();
@@ -167,134 +173,202 @@ namespace adventureGame
             switch (scene)
             {
                 case 0:  //start scene  
-                    outputLabel.Text = "You are in a hallway with a door to the left and the right which one do you want to go through?";
+                    outputLabel.Text = "You are in a hallway with a door to the left that says do not enter you will die and the right that says " +
+                        "exit which one do you want to go through?";
                     redLabel.Text = "Right";
                     blueLabel.Text = "Left";
+                    pictureBox.BackgroundImage = Properties.Resources.scene_0;
+                    scenePlayer.Play();
                     break;
                 case 1:
                     outputLabel.Text = "You walk through the door and a voice says, Welcome, Do you want to play a game";
                     redLabel.Text = "No";
                     blueLabel.Text = "Yes";
+                    pictureBox.BackgroundImage = Properties.Resources.scene_1;
+                    scenePlayer.Play();
                     break;
                 case 2:
                     outputLabel.Text = "You walk through the door and you exit to the city, Yay you escaped do you want to play again?";
                     redLabel.Text = "No";
                     blueLabel.Text = "Yes";
+                    pictureBox.BackgroundImage = Properties.Resources.scene_1;
+                    winPlayer.Play();
                     break;
                 case 3:
-                    outputLabel.Text = "The walls of the room start to close and a voice tells you to enter but remember that the truth may not be reality. Do you walk through?";
+                    outputLabel.Text = "The walls of the room start to close and a voice tells you to enter but remember that the truth " +
+                        "may not be reality. Do you walk through?";
                     redLabel.Text = "No";
                     blueLabel.Text = "Yes";
+                    pictureBox.BackgroundImage = Properties.Resources.scene_3;
+                    scenePlayer.Play();
                     break;
                 case 4:
                     outputLabel.Text = "A voice says too bad and laughs, the walls start to close in and a door opens. Do you walk through?";
                     redLabel.Text = "No";
                     blueLabel.Text = "Yes";
-                    break;
-                    //Ended the day here
+                    pictureBox.BackgroundImage = Properties.Resources.scene_3;
+                    scenePlayer.Play();
+                    break;                    
                 case 5:
-                    outputLabel.Text = "You tame the horse and ride to safety, Play again";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    outputLabel.Text = "You walk into the next room and the door closes behind you. On the wall reads What Roman Numeral is equal to 56?";
+                    redLabel.Text = "XLVIII";
+                    blueLabel.Text = "LVI";
+                    pictureBox.BackgroundImage = Properties.Resources.scene_5;
+                    scenePlayer.Play();
                     break;
                 case 6:
-                    outputLabel.Text = "The horse swims by and you die of loneliness, Play again";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    outputLabel.Text = "The walls close and you are crushed. Do you want to play again?";
+                    redLabel.Text = "No";
+                    blueLabel.Text = "Yes";
+                    pictureBox.BackgroundImage = Properties.Resources.death_scene;
+                    deathPlayer.Play();
                     break;
                 case 7:
-                    outputLabel.Text = "The horse swims by and you die of loneliness, Play again";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    outputLabel.Text = "The door opens and a 30 second clock starts to count down. Do you walk through or do you wait?";
+                    redLabel.Text = "Walk Through";
+                    blueLabel.Text = "Wait";
+                    pictureBox.BackgroundImage = Properties.Resources.scene_7;
+                    scenePlayer.Play();
                     break;
                 case 8:  
-                    outputLabel.Text = "You are lost in a forest which way do you want to go";
-                    redLabel.Text = "North";
-                    blueLabel.Text = "South";
+                    outputLabel.Text = "The doors lock and a poison gas begins to fill the room, shortly after you pass out and die. Would you like to play again?";
+                    redLabel.Text = "No";
+                    blueLabel.Text = "Yes";
+                    pictureBox.BackgroundImage = Properties.Resources.death_scene;
+                    deathPlayer.Play();
                     break;
                 case 9:
-                    outputLabel.Text = "You come to a lake do you want to drink";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    outputLabel.Text = "You walk into the next room and there is a glass in the room with a saw beside" +
+                        " it and it says to fill it with blood to leave the room. Do you cut your hand off or do you try pushing down on the pressure plate?";
+                    redLabel.Text = "Weight";
+                    blueLabel.Text = "Hand";
+                    pictureBox.BackgroundImage = Properties.Resources.scene_9;
+                    scenePlayer.Play();
                     break;
                 case 10:
-                    outputLabel.Text = "You fall in a pit and die, Play again?";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    outputLabel.Text = "You were hit in the leg with a spear but are still alive. You walk into the next " +
+                        "room and there is a glass in the room with a saw beside it and it says to fill it with blood to " +
+                        "leave the room. Do you cut your hand off or do you try pushing down on the pressure plate?";
+                    redLabel.Text = "Weight";
+                    blueLabel.Text = "Hand";
+                    pictureBox.BackgroundImage = Properties.Resources.scene_9;
+                    scenePlayer.Play();
                     break;
                 case 11:
-                    outputLabel.Text = "The water is stagent, you die of Cholera, Play again?";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    outputLabel.Text = "You were impaled by a spear and died. Would you like to play again?";
+                    redLabel.Text = "No";
+                    blueLabel.Text = "Yes";
+                    pictureBox.BackgroundImage = Properties.Resources.death_scene;
+                    deathPlayer.Play();
                     break;
                 case 12:
-                    outputLabel.Text = "A horse swims by do you try to ride it";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    outputLabel.Text = "The door opens and you see outside, you walk through the door and see a pay " +
+                        "phone one way and a house the other. which way do you run?";
+                    redLabel.Text = "Phone";
+                    blueLabel.Text = "House";
+                    pictureBox.BackgroundImage = Properties.Resources.scene_12;
+                    scenePlayer.Play();
                     break;
                 case 13:
-                    outputLabel.Text = "You tame the horse and ride to safety, Play again";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    outputLabel.Text = "You cut off your hand and start to fill the glass with your blood. The door clicks " +
+                        "and opens but as your walking through everything goes blurry and you die from blood loss. Would you like to play again?";
+                    redLabel.Text = "No";
+                    blueLabel.Text = "Yes";
+                    pictureBox.BackgroundImage = Properties.Resources.death_scene;
+                    deathPlayer.Play();
                     break;
                 case 14:
-                    outputLabel.Text = "The horse swims by and you die of loneliness, Play again";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    outputLabel.Text = "You run to the house and see the front door the garage door and a window which one do you go to?";
+                    redLabel.Text = "Garage Door";
+                    blueLabel.Text = "Window";
+                    greenLabel.Text = "Front Door";
+                    pictureBox.BackgroundImage = Properties.Resources.scene_14;
+                    scenePlayer.Play();
                     break;
                 case 15:
-                    outputLabel.Text = "The horse swims by and you die of loneliness, Play again";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    outputLabel.Text = "You pick up the phone and and you hear is beeping, the phone blows up and you die. Would you like to play again?";
+                    redLabel.Text = "No";
+                    blueLabel.Text = "Yes";
+                    pictureBox.BackgroundImage = Properties.Resources.death_scene;
+                    deathPlayer.Play();
                     break;
-                case 16:   
-                    outputLabel.Text = "You are lost in a forest which way do you want to go";
-                    redLabel.Text = "North";
-                    blueLabel.Text = "South";
+                case 16:
+                    greenLabel.Text = "";
+                    outputLabel.Text = "You come to the front door and when you touch the handle you get electrocuted and die. Do you want to play again?";
+                    redLabel.Text = "No";
+                    blueLabel.Text = "Yes";
+                    pictureBox.BackgroundImage = Properties.Resources.death_scene;
+                    deathPlayer.Play();
                     break;
                 case 17:
-                    outputLabel.Text = "You come to a lake do you want to drink";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    greenLabel.Text = "";
+                    outputLabel.Text = "You walk into the garage and see a door and a basketball net. Do you start to shoot baskets or do you walk through the door?";
+                    redLabel.Text = "Door";
+                    blueLabel.Text = "Basketball";
+                    pictureBox.BackgroundImage = Properties.Resources.scene_16;
+                    scenePlayer.Play();
                     break;
                 case 18:
-                    outputLabel.Text = "You fall in a pit and die, Play again?";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    greenLabel.Text = "";
+                    outputLabel.Text = "You run you the window and jump through it getting covered in glass, a piece cuts your " +
+                        "throat and you die. Do you want to play again?";
+                    redLabel.Text = "No";
+                    blueLabel.Text = "Yes";
+                    pictureBox.BackgroundImage = Properties.Resources.death_scene;
+                    deathPlayer.Play();
                     break;               
                 case 20:
-                    outputLabel.Text = "A horse swims by do you try to ride it";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    outputLabel.Text = "You hit a fade away three pointer and the door opens. You walk through the door into " +
+                        "your childhood bedroom and the voice says to destroy the thing you love to escape. From what " +
+                        "you remember you loved your blanket and teddy equally which one do you rip apart?";
+                    redLabel.Text = "Blanket";
+                    blueLabel.Text = "Teddy";
+                    pictureBox.BackgroundImage = Properties.Resources.scene_19;
+                    scenePlayer.Play();
                     break;
                 case 21:
-                    outputLabel.Text = "You tame the horse and ride to safety, Play again";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    outputLabel.Text = "You try to open the door and a voice says only ballers get through. Spikes shoot out the door. " +
+                        "You dodge the spikes and go back to hit a three point shot that opens the door. You walk through the door into " +
+                        "your childhood bedroom and the voice says to destroy the thing you love to escape. From what you remember you " +
+                        "loved your blanket and teddy equally which one do you rip apart?";
+                    redLabel.Text = "Blanket";
+                    blueLabel.Text = "Teddy";
+                    pictureBox.BackgroundImage = Properties.Resources.death_scene;
+                    deathPlayer.Play();
                     break;
                 case 22:
-                    outputLabel.Text = "The horse swims by and you die of loneliness, Play again";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    outputLabel.Text = "You try to open the door and a voice says only ballers get through. Spikes shoot out the door. " +
+                        "The spikes hit you and you die. Would you like to play again?";
+                    redLabel.Text = "No";
+                    blueLabel.Text = "Yes";
+                    pictureBox.BackgroundImage = Properties.Resources.death_scene;
+                    deathPlayer.Play();
                     break;
                 case 23:
-                    outputLabel.Text = "The horse swims by and you die of loneliness, Play again";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    outputLabel.Text = "You rip apart the blanket and a key that says window on it. You take it to the window and it opens, " +
+                        "you walk out and run toward the city. Congratulations, you have escaped, for now. Would you like to play again?";
+                    redLabel.Text = "No";
+                    blueLabel.Text = "Yes";
+                    pictureBox.BackgroundImage = Properties.Resources.scene_12;
+                    winPlayer.Play();
                     break;
                 case 24:
-                    outputLabel.Text = "The horse swims by and you die of loneliness, Play again";
-                    redLabel.Text = "Yes";
-                    blueLabel.Text = "No";
+                    outputLabel.Text = "You rip apart the teddy and a ticking bomb blows you up and you die. Would you like to play again?";
+                    redLabel.Text = "No";
+                    blueLabel.Text = "Yes";
+                    pictureBox.BackgroundImage = Properties.Resources.death_scene;
+                    deathPlayer.Play();
                     break;
                 case 25:
                     outputLabel.Text = "Thanks for playing";
                     redLabel.Text = "";
                     blueLabel.Text = "";
+                    pictureBox.BackgroundImage = Properties.Resources.scene_12;
 
+                    Refresh();
+                    Thread.Sleep(3000);
 
-
-
+                    Application.Exit();
                     break;
                 default:
                     break;

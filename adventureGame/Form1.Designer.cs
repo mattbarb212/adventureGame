@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adventureGame));
             this.outputLabel = new System.Windows.Forms.Label();
+            this.redLabel = new System.Windows.Forms.Label();
+            this.greenLabel = new System.Windows.Forms.Label();
+            this.blueLabel = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.redButton = new System.Windows.Forms.PictureBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.redLabel = new System.Windows.Forms.Label();
-            this.greenLabel = new System.Windows.Forms.Label();
-            this.blueLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redButton)).BeginInit();
@@ -45,11 +45,42 @@
             // 
             // outputLabel
             // 
-            this.outputLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputLabel.Location = new System.Drawing.Point(12, 13);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(483, 62);
+            this.outputLabel.Size = new System.Drawing.Size(483, 85);
             this.outputLabel.TabIndex = 0;
+            this.outputLabel.Text = "You are in a hallway with a door to the left that says do not enter, you will die" +
+    " and the right that says exit which one do you want to go through?";
+            // 
+            // redLabel
+            // 
+            this.redLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.redLabel.Location = new System.Drawing.Point(64, 335);
+            this.redLabel.Name = "redLabel";
+            this.redLabel.Size = new System.Drawing.Size(171, 43);
+            this.redLabel.TabIndex = 5;
+            this.redLabel.Text = "Right";
+            this.redLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // greenLabel
+            // 
+            this.greenLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.greenLabel.Location = new System.Drawing.Point(292, 335);
+            this.greenLabel.Name = "greenLabel";
+            this.greenLabel.Size = new System.Drawing.Size(171, 43);
+            this.greenLabel.TabIndex = 6;
+            this.greenLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // blueLabel
+            // 
+            this.blueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.blueLabel.Location = new System.Drawing.Point(64, 391);
+            this.blueLabel.Name = "blueLabel";
+            this.blueLabel.Size = new System.Drawing.Size(171, 43);
+            this.blueLabel.TabIndex = 7;
+            this.blueLabel.Text = "Left";
+            this.blueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox2
             // 
@@ -83,35 +114,13 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(12, 79);
+            this.pictureBox.BackgroundImage = global::adventureGame.Properties.Resources.scene_0;
+            this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox.Location = new System.Drawing.Point(12, 101);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(483, 233);
+            this.pictureBox.Size = new System.Drawing.Size(483, 228);
             this.pictureBox.TabIndex = 1;
             this.pictureBox.TabStop = false;
-            // 
-            // redLabel
-            // 
-            this.redLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.redLabel.Location = new System.Drawing.Point(64, 335);
-            this.redLabel.Name = "redLabel";
-            this.redLabel.Size = new System.Drawing.Size(171, 43);
-            this.redLabel.TabIndex = 5;
-            // 
-            // greenLabel
-            // 
-            this.greenLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.greenLabel.Location = new System.Drawing.Point(292, 335);
-            this.greenLabel.Name = "greenLabel";
-            this.greenLabel.Size = new System.Drawing.Size(171, 43);
-            this.greenLabel.TabIndex = 6;
-            // 
-            // blueLabel
-            // 
-            this.blueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blueLabel.Location = new System.Drawing.Point(64, 391);
-            this.blueLabel.Name = "blueLabel";
-            this.blueLabel.Size = new System.Drawing.Size(171, 43);
-            this.blueLabel.TabIndex = 7;
             // 
             // adventureGame
             // 

@@ -92,5 +92,50 @@
   <ItemGroup>
     <None Include="Resources\Green Button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scene 0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scene 1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scene 3.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scene 3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scene 5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\death scene.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scene 7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scene 9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scene 12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scene 14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scene 19.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scene 16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\518855__mrickey13__fight-win-tune.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\320247__nicktermer__scream.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\332854__robinhood76__06246-ghostly-hit.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
